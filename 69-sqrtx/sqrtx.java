@@ -28,6 +28,6 @@ class Solution {
         // The loop ends when "start" becomes greater than "end", and "end" is the integer value of the square root.
         // However, since we might have been using integer division in the calculations,
         // we round down the value of "end" to the nearest integer to get the correct square root.
-        return Math.round(end);
+        return end;
     }
 }
