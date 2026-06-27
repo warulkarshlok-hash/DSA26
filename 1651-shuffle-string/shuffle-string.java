@@ -3,12 +3,12 @@ class Solution {
         int n = s.length();
         char[] ans = new char[n];
 
-        int i = 0;
-        for (char ch : s.toCharArray()) {
-            ans[indices[i]] = ch;
-            i++;
+        
+        for (int i = 0;i<n;i++) {
+            ans[indices[i]] = s.charAt(i);
+            
         }
 
-        return new String(ans);
+         return String.valueOf(ans);
     }
 }
