@@ -10,18 +10,31 @@ class Solution {
       map.put('D',500); 
       map.put('M',1000); 
 
-      char[] arr = s.toCharArray();
-      int sum = 0;
-      for(int i = 0;i<arr.length;i++){
-        int curr = map.get(arr[i]);
+    //   char[] arr = s.toCharArray();
+    //   int sum = 0;
+    //   for(int i = 0;i<arr.length;i++){
+    //     int curr = map.get(arr[i]);
         
-        if(i<arr.length-1 && curr< map.get(arr[i+1]) ){ //next : map.get(arr[i+1]
-           sum-=curr;
+    //     if(i<arr.length-1 && curr< map.get(arr[i+1]) ){ //next : map.get(arr[i+1]
+    //        sum-=curr;
+    //     }
+    //     else{
+    //         sum+=curr;
+    //     }
+    //   }
+    //     return sum;
+     int result = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int curr = map.get(s.charAt(i));
+            int next = (i + 1 < s.length()) ? map.get(s.charAt(i + 1)) : 0;
+
+            if (curr < next) {
+                result -= curr;
+            } else {
+                result += curr;
+            }
         }
-        else{
-            sum+=curr;
-        }
-      }
-        return sum;
+
+        return result;
     }
 }
