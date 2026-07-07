@@ -13,12 +13,13 @@ class Solution {
       char[] arr = s.toCharArray();
       int sum = 0;
       for(int i = 0;i<arr.length;i++){
-        if(i<arr.length-1 && map.get(arr[i])<map.get(arr[i+1]) ){
-            sum+=(map.get(arr[i+1])-map.get(arr[i]));
-            i=i+1;
+        int curr = map.get(arr[i]);
+        
+        if(i<arr.length-1 && curr< map.get(arr[i+1]) ){ //next : map.get(arr[i+1]
+           sum-=curr;
         }
         else{
-            sum+=map.get(arr[i]);
+            sum+=curr;
         }
       }
         return sum;
