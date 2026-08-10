@@ -1,32 +1,21 @@
 class Solution {
     public boolean isIsomorphic(String s, String t) {
 
-        HashMap<Character, Character> map = new HashMap<>();
-        HashSet<Character> used = new HashSet<>();
+        int map1[]=new int[200];
+        int map2[]=new int[200];
 
-        int i = 0;
+        if(s.length()!=t.length())
+            return false;
 
-        for (char ch : s.toCharArray()) {
 
-            if (map.containsKey(ch)) {
+        for(int i=0;i<s.length();i++)
+        {
+            if(map1[s.charAt(i)]!=map2[t.charAt(i)])
+                return false;
 
-                if (map.get(ch) != t.charAt(i)) {
-                    return false;
-                }
-
-            } else { //s=ab and t=aa SATHI SPECIAL CONDITION AS No two characters may map to the same character 
-
-                if (used.contains(t.charAt(i))) {
-                    return false;
-                }
-
-                map.put(ch, t.charAt(i));
-                used.add(t.charAt(i));
-            }
-
-            i++;
+            map1[s.charAt(i)]=i+1;
+            map2[t.charAt(i)]=i+1;
         }
-
         return true;
     }
 }
