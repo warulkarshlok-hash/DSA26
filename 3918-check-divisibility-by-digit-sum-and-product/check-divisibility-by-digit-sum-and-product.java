@@ -11,7 +11,7 @@ class Solution {
             n /= 10;
         }
 
-        int divisor = digitSum + digitProduct;
-        return original % divisor == 0;
+        
+        return original % (digitSum + digitProduct) == 0;
     }
 }
