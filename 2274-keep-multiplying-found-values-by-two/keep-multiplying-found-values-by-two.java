@@ -7,13 +7,11 @@ class Solution {
         }
 
         
-        
-        int next = original;
-        while(set.contains(next)){
-            next *= 2;
+        while(set.contains(original)){
+            original *= 2;
             
         }
 
-        return next;
+        return original;
     }
 }
