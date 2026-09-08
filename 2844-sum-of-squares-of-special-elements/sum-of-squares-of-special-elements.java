@@ -1,9 +1,9 @@
 class Solution {
     public int sumOfSquares(int[] nums) {
         int n = nums.length;
-        int sum = nums[0]*nums[0];
+        int sum = 0 ;     //nums[0]*nums[0];
 
-        for(int i = 1;i<n;i++){
+        for(int i = 0;i<n;i++){
             if(n%(i+1)==0){
                 System.out.println(nums[i]);
                 sum += (nums[i]*nums[i]);
