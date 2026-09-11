@@ -6,7 +6,29 @@ class Solution {
         freq[digit]++;
        } 
 
-       for(int num = 100;num<=998;num=num+2){
+       int EvenMax = 0;
+
+       int max1 = Integer.MIN_VALUE;
+       int max2=Integer.MIN_VALUE;
+       int max3=Integer.MIN_VALUE;
+
+       for(int i = 0;i<digits.length;i++){
+        if(digits[i]>max1){
+            max3=max2;
+            max2=max1;
+            max1=digits[i];
+        }
+        else if(digits[i]>max2){
+            max3=max2;
+            max2=digits[i];
+        }
+        else if(digits[i]>max3){
+            max3=digits[i];
+        }
+       }
+       EvenMax=(max1*100)+(max2*10)+max3;
+
+       for(int num = 100;num<=EvenMax;num=num+2){
         int n = num;
         int a = n%10;
         n/=10;
