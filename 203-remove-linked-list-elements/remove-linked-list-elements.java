@@ -11,7 +11,7 @@
 class Solution {
     public ListNode removeElements(ListNode head, int val) {
         ListNode pHead = new ListNode(0);
-        pHead.next = head;
+        pHead.next = head; //THis is new head , we going to return 
 
         ListNode prev = pHead;
         ListNode curr = head;
@@ -19,14 +19,14 @@ class Solution {
         while(curr != null){
             if(curr.val == val){
                 prev.next = curr.next;
-                curr = curr.next;
             }
             else{
                 prev = curr;
-                curr=curr.next;
             }
+            curr=curr.next;
         }
 
         return pHead.next;
+        
     }
 }
